@@ -23,5 +23,8 @@ jobs:
           mkdir -p ~/.ssh
           echo "Host *" > ~/.ssh/config
           echo "StrictHostKeyChecking no" >> ~/.ssh/config
+          # Ensure the SSH key is read correctly and permissions are secure
+          ssh -i private_key.pem -o StrictHostKeyChecking=no ec2-user@13.51.79.56 exit
+          # Only proceed if SSH connection works
           scp -i private_key.pem -r /Users/mac/Documents/MY-URL/* ec2-user@13.51.79.56:/var/www/html
           rm private_key.pem
