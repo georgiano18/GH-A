@@ -25,4 +25,5 @@ jobs:
         run: |
           echo "${{ secrets.EC2_SSH_KEY }}" > private_key.pem
           chmod 600 private_key.pem
-          scp -i private_key.pem -r ./MY-URL/* ec2-user@13.51.79.56
+          scp -i private_key.pem -r /Users/mac/Documents/MY-URL/* ec2-user@13.51.79.56:/var/www/html
+
