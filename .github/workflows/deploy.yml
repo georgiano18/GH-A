@@ -15,7 +15,7 @@ jobs:
 
     - name: Copy files to EC2
       run: |
-        scp -i ${{ secrets.EC2_SSH_KEY }} -r ./MY-URL/* ec2-user@YOUR_EC2_IP:/var/www/html
+        scp -i ${{ secrets.EC2_SSH_KEY }} -r ./MY-URL/* ec2-user@13.51.79.56:/var/www/html
       env:
         EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
 
